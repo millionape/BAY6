@@ -13,11 +13,13 @@ import { createStore } from './store.js'
 /* Plugins */
 
 import nuxt_plugin_bootstrapvue_0fa497f3 from 'nuxt_plugin_bootstrapvue_0fa497f3' // Source: ./bootstrap-vue.js (mode: 'all')
+import nuxt_plugin_vueswatches_1e9d56ba from 'nuxt_plugin_vueswatches_1e9d56ba' // Source: ./vue-swatches.js (mode: 'all')
 import nuxt_plugin_axios_40b3bdc4 from 'nuxt_plugin_axios_40b3bdc4' // Source: ./axios.js (mode: 'all')
 import nuxt_plugin_vuecarousel_6c010c3d from 'nuxt_plugin_vuecarousel_6c010c3d' // Source: ../plugins/vue-carousel (mode: 'client')
 import nuxt_plugin_vuebacktotop_5f7b8136 from 'nuxt_plugin_vuebacktotop_5f7b8136' // Source: ../plugins/vue-backtotop (mode: 'client')
 import nuxt_plugin_vuetoastification_bd752598 from 'nuxt_plugin_vuetoastification_bd752598' // Source: ../plugins/vue-toastification (mode: 'client')
 import nuxt_plugin_vueperslides_e3097022 from 'nuxt_plugin_vueperslides_e3097022' // Source: ../plugins/vueperslides (mode: 'client')
+import nuxt_plugin_vuejstogglebutton_66316bf6 from 'nuxt_plugin_vuejstogglebutton_66316bf6' // Source: ../plugins/vue-js-toggle-button (mode: 'client')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -178,6 +180,10 @@ async function createApp (ssrContext) {
     await nuxt_plugin_bootstrapvue_0fa497f3(app.context, inject)
   }
 
+  if (typeof nuxt_plugin_vueswatches_1e9d56ba === 'function') {
+    await nuxt_plugin_vueswatches_1e9d56ba(app.context, inject)
+  }
+
   if (typeof nuxt_plugin_axios_40b3bdc4 === 'function') {
     await nuxt_plugin_axios_40b3bdc4(app.context, inject)
   }
@@ -196,6 +202,10 @@ async function createApp (ssrContext) {
 
   if (process.client && typeof nuxt_plugin_vueperslides_e3097022 === 'function') {
     await nuxt_plugin_vueperslides_e3097022(app.context, inject)
+  }
+
+  if (process.client && typeof nuxt_plugin_vuejstogglebutton_66316bf6 === 'function') {
+    await nuxt_plugin_vuejstogglebutton_66316bf6(app.context, inject)
   }
 
   // If server-side, wait for async component to be resolved first

@@ -30,6 +30,7 @@ export default {
     { src: '~/plugins/vue-backtotop', ssr: false },
     { src: '~/plugins/vue-toastification', ssr: false },
     { src: '~/plugins/vueperslides', ssr: false },
+    {src: '~plugins/vue-js-toggle-button', ssr: false},
     // { src: '~/plugins/firebase' },
   ],
   /*
@@ -45,6 +46,8 @@ export default {
     'bootstrap-vue/nuxt',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    'vue-swatches/nuxt',
+    'vue-filepond',
   ],
   /*
   /*

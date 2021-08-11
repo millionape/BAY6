@@ -8241,6 +8241,71 @@ Cart Area CSS
         }
     }
 }
+// KITTAPHORN CSS
+.designer-preview {
+    text-align: left;
+    background: $white-color;
+    padding: 40px;
+    max-width: 1200px;
+    box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
+    border-radius: 5px;
+    margin: 0 auto;
+
+    h3 {
+        margin-bottom: 20px;
+        font: {
+            size: 19px;
+        }
+    }
+    ul {
+        padding: 0;
+        margin: 0 0 25px;
+        list-style-type: none;
+        
+        li {
+            border: 1px solid #eaedff;
+            padding: 10px 15px;
+            color: $black-color;
+            font-weight: 600;
+            overflow: hidden;
+            
+            &:first-child {
+                border: {
+                    bottom: none;
+                }
+            }
+            &:last-child {
+                border: {
+                    top: none;
+                }
+            }
+            span {
+                float: right;
+                color: $paragraph-color;
+                font-weight: normal;
+
+                b {
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
+
+.designer-panel {
+    text-align: left;
+    background: $white-color;
+    padding: 1.5rem;
+    max-width: 600px;
+    box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
+    border-radius: 5px;
+    margin: 0 auto;
+}
+.divider {
+    border-top: 1px solid rgb(212, 212, 212);
+    border-radius: 1px;
+    margin-bottom: .7rem;
+}
 
 /*================================================
 Checkout CSS

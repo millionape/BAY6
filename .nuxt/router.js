@@ -9,6 +9,7 @@ const _04c878a3 = () => interopDefault(import('../pages/blog-one.vue' /* webpack
 const _10d76f88 = () => interopDefault(import('../pages/cart.vue' /* webpackChunkName: "pages/cart" */))
 const _124556ae = () => interopDefault(import('../pages/checkout.vue' /* webpackChunkName: "pages/checkout" */))
 const _52bae2e8 = () => interopDefault(import('../pages/contact.vue' /* webpackChunkName: "pages/contact" */))
+const _42047ee7 = () => interopDefault(import('../pages/create/index.vue' /* webpackChunkName: "pages/create/index" */))
 const _e702642a = () => interopDefault(import('../pages/diction-three.vue' /* webpackChunkName: "pages/diction-three" */))
 const _f4bae64e = () => interopDefault(import('../pages/diction-two.vue' /* webpackChunkName: "pages/diction-two" */))
 const _79272ab3 = () => interopDefault(import('../pages/gallery-one.vue' /* webpackChunkName: "pages/gallery-one" */))
@@ -16,6 +17,7 @@ const _6dee255f = () => interopDefault(import('../pages/landing.vue' /* webpackC
 const _cceba49e = () => interopDefault(import('../pages/login.vue' /* webpackChunkName: "pages/login" */))
 const _0ecac868 = () => interopDefault(import('../pages/products.vue' /* webpackChunkName: "pages/products" */))
 const _37d51500 = () => interopDefault(import('../pages/signup.vue' /* webpackChunkName: "pages/signup" */))
+const _039222d6 = () => interopDefault(import('../pages/create/store-designer/index.vue' /* webpackChunkName: "pages/create/store-designer/index" */))
 const _01541c95 = () => interopDefault(import('../pages/products-details/_shopname/index.vue' /* webpackChunkName: "pages/products-details/_shopname/index" */))
 const _40f2e500 = () => interopDefault(import('../pages/products-details/_shopname/_id/index.vue' /* webpackChunkName: "pages/products-details/_shopname/_id/index" */))
 const _603aeacc = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
@@ -61,6 +63,10 @@ export const routerOptions = {
     component: _52bae2e8,
     name: "contact"
   }, {
+    path: "/create",
+    component: _42047ee7,
+    name: "create"
+  }, {
     path: "/diction-three",
     component: _e702642a,
     name: "diction-three"
@@ -88,6 +94,10 @@ export const routerOptions = {
     path: "/signup",
     component: _37d51500,
     name: "signup"
+  }, {
+    path: "/create/store-designer",
+    component: _039222d6,
+    name: "create-store-designer"
   }, {
     path: "/products-details/:shopname?",
     component: _01541c95,

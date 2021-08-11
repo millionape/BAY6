@@ -19,6 +19,7 @@ let store = {};
   // Enforce store modules
   store.modules = store.modules || {}
 
+  resolveStoreModules(require('../store/designer.js'), 'designer.js')
   resolveStoreModules(require('../store/products.js'), 'products.js')
 
   // If the environment supports hot reloading...
@@ -26,6 +27,7 @@ let store = {};
   if (process.client && module.hot) {
     // Whenever any Vuex module is updated...
     module.hot.accept([
+      '../store/designer.js',
       '../store/index.js',
       '../store/products.js',
     ], () => {

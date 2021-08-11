@@ -14,6 +14,8 @@ import '../node_modules/bootstrap/dist/css/bootstrap.css'
 
 import '../node_modules/bootstrap-vue/dist/bootstrap-vue.css'
 
+import '../node_modules/vue-swatches/dist/vue-swatches.css'
+
 import '../assets/scss/styles/animate.min.css'
 
 import '../assets/scss/styles/fontawesome.min.css'
