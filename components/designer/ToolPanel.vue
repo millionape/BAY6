@@ -92,12 +92,54 @@
             <p class="small-text">Icon</p>
           </b-col>
         </b-row>
-        <br/>
+        <br />
         <label>Navigation Menu</label>
-        
 
-        <div><span class="my-auto mr-2">Contact</span><toggle-button class="my-auto" :value="nav_link_contact" color="#82C7EB" :labels="{checked: 'enable', unchecked: 'disable'}" width="65"/></div>
-        <div class="mt-1"><span class="my-auto mr-2">Blog</span><toggle-button class="my-auto" :value="nav_link_blog" color="#82C7EB" :labels="{checked: 'enable', unchecked: 'disable'}" width="65"/></div>
+        <b-form-checkbox
+          v-model="showCategory"
+        >
+          Category
+        </b-form-checkbox>
+        <b-form-checkbox
+          v-model="showProduct"
+        >
+          Product
+        </b-form-checkbox>
+        <b-form-checkbox
+          v-model="showContact"
+        >
+          Contact
+        </b-form-checkbox>
+        <!-- <div>
+          <span class="my-auto mr-2">Cetagory</span
+          ><toggle-button
+            class="my-auto"
+            :v-model="showCategory"
+            color="#82C7EB"
+            :labels="{ checked: 'enable', unchecked: 'disable' }"
+            :width="65"
+          />
+        </div> -->
+        <!-- <div class="mt-1">
+          <span class="my-auto mr-2">Products</span
+          ><toggle-button
+            class="my-auto"
+            :v-model="showProduct"
+            color="#82C7EB"
+            :labels="{ checked: 'enable', unchecked: 'disable' }"
+            :width="65"
+          />
+        </div>
+        <div class="mt-1">
+          <span class="my-auto mr-2">Contact</span
+          ><toggle-button
+            class="my-auto"
+            :v-model="showContact"
+            color="#82C7EB"
+            :labels="{ checked: 'enable', unchecked: 'disable' }"
+            :width="65"
+          />
+        </div> -->
 
         <!-- <cropper
           class="cropper"
@@ -139,8 +181,9 @@ export default {
   },
   data() {
     return {
-      nav_link_contact: false,
-      nav_link_blog: false,
+      showCategory: false,
+      showProduct: false,
+      showContact: false,
       showIconCropper: false,
       bg_color: "#000000",
       nav_color: "#000000",
@@ -162,8 +205,8 @@ export default {
     };
   },
   methods: {
-    onBlogRadioClicked(){
-      console.log("clicked")
+    onBlogRadioClicked() {
+      console.log("clicked");
       this.nav_link_blog = !this.nav_link_blog;
     },
     change({ coordinates, canvas }) {
@@ -171,16 +214,46 @@ export default {
     },
     ...mapMutations({
       openCropper: "designer/SET_IMAGETOOL_STATE",
+      setShowContact: "designer/SET_CONTACT_SHOW",
+      setShowProduct: "designer/SET_PRODUCT_SHOW",
+      setShowCategory: "designer/SET_CATEGORY_SHOW",
     }),
     openImageCropper() {
       this.openCropper(true);
     },
   },
-  //   computed: mapGetters({
-  //     isImageToolShow: 'designer/isImageToolShow'
-  //   }),
+  watch: {
+    showContact(val, oldVal) {
+      console.log("showContact ",val,oldVal)
+      this.setShowContact(val)
+    },
+    showProduct(val, oldVal) {
+      console.log("showProduct ",val,oldVal)
+      this.setShowProduct(val)
+    },
+    showCategory(val, oldVal) {
+      console.log("showCategory ",val,oldVal)
+      this.setShowCategory(val)
+    },
+  },
   computed: {
-    ...mapGetters("designer", ["isImageToolShow"]),
+    ...mapGetters("designer", [
+      "isImageToolShow",
+      "isContactShow",
+      "isCategoryShow",
+      "isProductShow",
+    ]),
+  },
+  mounted() {
+    this.showCategory = this.isCategoryShow;
+    this.showProduct = this.isProductShow;
+    this.showContact = this.isContactShow;
+    console.log(
+      "vuex ==> ",
+      this.isContactShow,
+      this.isCategoryShow,
+      this.isProductShow
+    );
   },
 };
 </script>
@@ -216,7 +289,7 @@ label {
   justify-content: center;
   align-items: center;
 }
-.text-gray{
+.text-gray {
   color: rgb(95, 95, 95);
 }
 </style>
